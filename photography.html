@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="photo-page">
+
+    <nav class="glass-nav">
+<div class="logo">AGR Media</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photography.html" class="active">Photography</a></li>
+            <li><a href="design.html">Design</a></li>
+             <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="photo-slider">
+        <div class="photo-slide active">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1920&q=80" alt="Nature">
+            <div class="photo-info">
+                <span>01</span>
+                <h3>The Great Outdoors</h3>
+            </div>
+        </div>
+
+        <div class="photo-slide">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80" alt="Forest">
+            <div class="photo-info">
+                <span>02</span>
+                <h3>Hidden Woodlands</h3>
+            </div>
+        </div>
+
+        <div class="photo-slide">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80" alt="Lake">
+            <div class="photo-info">
+                <span>03</span>
+                <h3>Silent Waters</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let current = 0;
+        const slides = document.querySelectorAll(".photo-slide");
+
+        function nextSlide() {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }
+
+        setInterval(nextSlide, 6000); // Slower 6-second rotation for photography
+    </script>
+</body>
+</html>
