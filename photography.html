@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="photo-page">
+
+    <nav class="glass-nav">
+<div class="logo">AGR Media</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photography.html" class="active">Photography</a></li>
+            <li><a href="design.html">Design</a></li>
+             <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+    </nav>
+       <div class="photo-info" style="text-align: center;">
+<span style="display: block; font-size: 1.2rem; color: #888;">01</span>
+ <h3 style="margin: 5px 0; font-size: 1.5rem;">The emotion line</h3>
+    <div class="photo-slider">
+       <div class="photo-slider">
+    <div class="photo-slide active" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        
+        <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
+            <img src="../IMG_1976.JPG" alt="IMG_1976" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+            <img src="../IMG_2360.JPG" alt="IMG_2360" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+            <img src="../IMG_1985.JPG" alt="IMG_1985" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+            <img src="../IMG_2367.JPG" alt="IMG_2367" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+        </div>
+        </div>
+
+    </div>
+</div>
+ <div class="photo-info" style="text-align: center;">
+<span style="display: block; font-size: 1.2rem; color: #888;">02</span>
+ <h3 style="margin: 5px 0; font-size: 1.5rem;">Friendship land</h3>
+
+ <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
+    <img src="../IMG_6482.JPG" alt="IMG_6482" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
+    <img src="../IMG_6530.jpg" alt="IMG_6530" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
+    <img src="../IMG_6501.jpg" alt="IMG_6501" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
+</div>
+<div class="photo-info">
+ <div class="photo-info" style="text-align: center;">
+<span style="display: block; font-size: 1.2rem; color: #888;">03</span>
+ <h3 style="margin: 5px 0; font-size: 1.5rem;">silent waters</h3>
+
+        <div class="image-group" style="display: flex; justify-content: center; gap: 2%; width: 100%; margin-bottom: 20px;">
+    <img src="../IMG_5179.JPG" alt="Beach Sunset 1" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
+    
+    <img src="../IMG_5185 (1).jpg" alt="Beach Sunset 2" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
+
+</div>
+
+    <script>
+        let current = 0;
+        const slides = document.querySelectorAll(".photo-slide");
+
+        function nextSlide() {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }
+
+        setInterval(nextSlide, 6000); // Slower 6-second rotation for photography
+    </script>
+</body>
+</html>
