@@ -84,4 +84,4 @@ nav {
     position: relative;       /* Allows z-index to work */
     z-index: 9999;           /* Moves it to the absolute front layer */
     background: transparent;  /* Ensures it doesn't block the view */
-    
+}
