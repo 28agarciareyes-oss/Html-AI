@@ -6,68 +6,127 @@
     <title>Photography | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Hover Effect */
+        .clickable-img {
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .clickable-img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        /* Lightbox Overlay Style */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s ease;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        #close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="photo-page">
 
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Full View">
+    </div>
+
     <nav class="glass-nav">
-<div class="logo">AGR Media</div>
+        <div class="logo">AGR Media</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="photography.html" class="active">Photography</a></li>
             <li><a href="design.html">Design</a></li>
-             <li><a href="contact.html">Contact</a></li>
-
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-       <div class="photo-info" style="text-align: center;">
-<span style="display: block; font-size: 1.2rem; color: #888;">01</span>
- <h3 style="margin: 5px 0; font-size: 1.5rem;">The emotion line</h3>
-    <div class="photo-slider">
-       <div class="photo-slider">
-    <div class="photo-slide active" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        
-        <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
-            <img src="../IMG_1976.JPG" alt="IMG_1976" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-            <img src="../IMG_2360.JPG" alt="IMG_2360" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-            <img src="../IMG_1985.JPG" alt="IMG_1985" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-            <img src="../IMG_2367.JPG" alt="IMG_2367" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-        </div>
-        </div>
 
+    <div class="photo-info" style="text-align: center;">
+        <span style="display: block; font-size: 1.2rem; color: #888;">01</span>
+        <h3 style="margin: 5px 0; font-size: 1.5rem;">The emotion line</h3>
+        <div class="photo-slider">
+            <div class="photo-slide active" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
+                    <img class="clickable-img" src="../IMG_1976.JPG" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+                    <img class="clickable-img" src="../IMG_2360.JPG" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+                    <img class="clickable-img" src="../IMG_1985.JPG" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+                    <img class="clickable-img" src="../IMG_2367.JPG" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+                </div>
+            </div>
+        </div>
     </div>
-</div>
- <div class="photo-info" style="text-align: center;">
-<span style="display: block; font-size: 1.2rem; color: #888;">02</span>
- <h3 style="margin: 5px 0; font-size: 1.5rem;">Friendship land</h3>
 
- <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
-    <img src="../IMG_6482.JPG" alt="IMG_6482" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
-    <img src="../IMG_6530.jpg" alt="IMG_6530" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
-    <img src="../IMG_6501.jpg" alt="IMG_6501" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
-</div>
-<div class="photo-info">
- <div class="photo-info" style="text-align: center;">
-<span style="display: block; font-size: 1.2rem; color: #888;">03</span>
- <h3 style="margin: 5px 0; font-size: 1.5rem;">silent waters</h3>
+    <div class="photo-info" style="text-align: center;">
+        <span style="display: block; font-size: 1.2rem; color: #888;">02</span>
+        <h3 style="margin: 5px 0; font-size: 1.5rem;">Friendship land</h3>
+        <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
+            <img class="clickable-img" src="../IMG_6482.JPG" onclick="openLightbox(this.src)" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
+            <img class="clickable-img" src="../IMG_6530.jpg" onclick="openLightbox(this.src)" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
+            <img class="clickable-img" src="../IMG_6501.jpg" onclick="openLightbox(this.src)" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
+        </div>
+    </div>
 
+    <div class="photo-info" style="text-align: center;">
+        <span style="display: block; font-size: 1.2rem; color: #888;">03</span>
+        <h3 style="margin: 5px 0; font-size: 1.5rem;">silent waters</h3>
         <div class="image-group" style="display: flex; justify-content: center; gap: 2%; width: 100%; margin-bottom: 20px;">
-    <img src="../IMG_5179.JPG" alt="Beach Sunset 1" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
-    
-    <img src="../IMG_5185 (1).jpg" alt="Beach Sunset 2" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
-
-</div>
+            <img class="clickable-img" src="../IMG_5179.JPG" onclick="openLightbox(this.src)" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
+            <img class="clickable-img" src="../IMG_5185 (1).jpg" onclick="openLightbox(this.src)" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
+        </div>
+    </div>
 
     <script>
-        let current = 0;
-        const slides = document.querySelectorAll(".photo-slide");
-
-        function nextSlide() {
-            slides[current].classList.remove("active");
-            current = (current + 1) % slides.length;
-            slides[current].classList.add("active");
+        // Lightbox Functions
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
         }
 
-        setInterval(nextSlide, 6000); // Slower 6-second rotation for photography
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Original Slider Logic
+        let current = 0;
+        const slides = document.querySelectorAll(".photo-slide");
+        function nextSlide() {
+            if(slides.length > 0) {
+                slides[current].classList.remove("active");
+                current = (current + 1) % slides.length;
+                slides[current].classList.add("active");
+            }
+        }
+        setInterval(nextSlide, 6000);
     </script>
 </body>
 </html>
