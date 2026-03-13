@@ -6,6 +6,23 @@
     <title>Designs | Gallery</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Ensuring the slideshow has proper spacing */
+        .slideshow-window {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+    </style>
 </head>
 <body>
 
@@ -14,64 +31,43 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="photography.html">Photography</a></li>
-<li><a href="design.html" class="active">Design</a></li>
+            <li><a href="design.html" class="active">Design</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <header style="margin-bottom: 3rem;">
-            <h1>My Designs </h1>
+        <header style="margin-bottom: 3rem; text-align: center;">
+            <h1>My Designs</h1>
             <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; color: var(--accent);">My Showcase • 2026</p>
         </header>
 
         <div class="slideshow-window">
             <div class="mySlides fade">
- <div class="photo-slide">
-<div class="photo-slide">
-    <img src="../Screenshot 2026-03-02 at 8.45.18 AM.png" 
-         alt="Screenshot" 
-         title="Screenshot" 
-         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; border-radius: 4px;" />
-    
-    <div class="photo-info">
-    </div>
-</div>
-    
-    <div class="photo-info">
-    </div>
-</div>
+                <div class="photo-slide">
+                    <img src="images/Screenshot 2026-03-02 at 8.45.18 AM.png" 
+                         alt="Screenshot 1" 
+                         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;" />
+                </div>
             </div>
 
             <div class="mySlides fade">
-      <div class="photo-slide">
-    <img src="../Screenshot 2026-03-02 at 8.45.35 AM.png" 
-         alt="Screenshot" 
-         title="Screenshot" 
-         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; border-radius: 4px;" />
-    
-    <div class="photo-info">
-    </div>
-</div>
+                <div class="photo-slide">
+                    <img src="images/Screenshot 2026-03-02 at 8.45.35 AM.png" 
+                         alt="Screenshot 2" 
+                         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;" />
+                </div>
             </div>
 
             <div class="mySlides fade">
-      <div class="photo-slide">
-    <img src="../vector landscape.png" 
-         alt="vector landscape" 
-         title="vector landscape" 
-         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; border-radius: 4px;" />
-    
-    <div class="photo-info">
-    </div>
-</div>
+                <div class="photo-slide">
+                    <img src="images/vector landscape.png" 
+                         alt="Vector Landscape" 
+                         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;" />
+                </div>
             </div>
             
             <div class="slide-overlay"></div>
-             <div class="photo-slide">
-
-</div>
-</div>
         </div>
     </div>
 
@@ -88,7 +84,7 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 5000); // Changes image every 3 seconds for a relaxed feel
+            setTimeout(showSlides, 5000); // Changes image every 5 seconds
         }
     </script>
 </body>
