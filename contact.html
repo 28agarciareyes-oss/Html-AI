@@ -183,10 +183,6 @@
             transition: 0.3s ease;
         }
 
-        input::placeholder, textarea::placeholder {
-            color: #888;
-        }
-
         input:focus, textarea:focus {
             outline: none;
             border-color: #ffffff;
@@ -254,7 +250,7 @@
 
             <div class="contact-form">
                 <h2>Send a Message</h2>
-                <form action="#" method="POST">
+                <form action="https://formspree.io/f/your-id-here" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="Full Name" required>
