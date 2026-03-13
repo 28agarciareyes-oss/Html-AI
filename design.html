@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Ensuring the slideshow has proper spacing */
         .slideshow-window {
             position: relative;
             max-width: 1000px;
             margin: auto;
             overflow: hidden;
+        }
+        /* Fixed: Ensure slides are hidden by default to prevent a "flash" of all images */
+        .mySlides {
+            display: none;
         }
         .fade {
             animation-name: fade;
@@ -45,29 +48,21 @@
         <div class="slideshow-window">
             <div class="mySlides fade">
                 <div class="photo-slide">
-                    <img src="images/design1.png" 
-                         alt="Screenshot 1" 
-                         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;" />
+                    <img src="images/design1.png" alt="Screenshot 1" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;">
                 </div>
             </div>
 
             <div class="mySlides fade">
                 <div class="photo-slide">
-                    <img src="images/design2.png" 
-                         alt="Screenshot 2" 
-                         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;" />
+                    <img src="images/design2.png" alt="Screenshot 2" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;">
                 </div>
             </div>
 
             <div class="mySlides fade">
                 <div class="photo-slide">
-                    <img src="images/vector-landscape.png" 
-                         alt="Vector Landscape" 
-                         style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;" />
+                    <img src="images/vector-landscape.png" alt="Vector Landscape" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px;">
                 </div>
             </div>
-            
-            <div class="slide-overlay"></div>
         </div>
     </div>
 
@@ -78,13 +73,15 @@
         function showSlides() {
             let i;
             let slides = document.getElementsByClassName("mySlides");
+            if (slides.length === 0) return; // Safety check
+            
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 5000); // Changes image every 5 seconds
+            setTimeout(showSlides, 5000); 
         }
     </script>
 </body>
