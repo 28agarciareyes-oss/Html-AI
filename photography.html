@@ -52,6 +52,11 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        /* Layout Spacing */
+        .photo-info {
+            padding: 4rem 2rem;
+        }
     </style>
 </head>
 <body class="photo-page">
@@ -74,22 +79,18 @@
     <div class="photo-info" style="text-align: center;">
         <span style="display: block; font-size: 1.2rem; color: #888;">01</span>
         <h3 style="margin: 5px 0; font-size: 1.5rem;">The emotion line</h3>
-        <div class="photo-slider">
-            <div class="photo-slide active" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-                <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
-                    <img class="clickable-img" src="images/IMG_1976.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-                    <img class="clickable-img" src="images/IMG_2360.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-                    <img class="clickable-img" src="images/IMG_1985.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-                    <img class="clickable-img" src="images/IMG_2367.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
-                </div>
-            </div>
+        <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-top: 20px;">
+            <img class="clickable-img" src="images/IMG_1976.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+            <img class="clickable-img" src="images/IMG_2360.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+            <img class="clickable-img" src="images/IMG_1985.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
+            <img class="clickable-img" src="images/IMG_2367.jpg" onclick="openLightbox(this.src)" style="width: 23%; height: auto; object-fit: cover; border-radius: 4px;" />
         </div>
     </div>
 
     <div class="photo-info" style="text-align: center;">
         <span style="display: block; font-size: 1.2rem; color: #888;">02</span>
         <h3 style="margin: 5px 0; font-size: 1.5rem;">Friendship land</h3>
-        <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-bottom: 20px;">
+        <div class="image-group" style="display: flex; justify-content: center; gap: 1%; width: 100%; margin-top: 20px;">
             <img class="clickable-img" src="images/IMG_6482.jpg" onclick="openLightbox(this.src)" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
             <img class="clickable-img" src="images/IMG_6530.jpg" onclick="openLightbox(this.src)" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
             <img class="clickable-img" src="images/IMG_6501.jpg" onclick="openLightbox(this.src)" style="width: 32%; height: 450px; object-fit: cover; border-radius: 4px;" />
@@ -98,5 +99,22 @@
 
     <div class="photo-info" style="text-align: center;">
         <span style="display: block; font-size: 1.2rem; color: #888;">03</span>
-        <h3 style="margin: 5px 0; font-size: 1.5rem;">silent waters</h3>
-        <div class="image-group" style="display: flex; justify-content: center; gap:
+        <h3 style="margin: 5px 0; font-size: 1.5rem;">Silent waters</h3>
+        <div class="image-group" style="display: flex; justify-content: center; gap: 2%; width: 100%; margin-top: 20px;">
+            <img class="clickable-img" src="images/IMG_5179.jpg" onclick="openLightbox(this.src)" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
+            <img class="clickable-img" src="images/IMG_5185_1.jpg" onclick="openLightbox(this.src)" style="width: 48%; height: 500px; object-fit: cover; border-radius: 4px;" />
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
