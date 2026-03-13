@@ -9,9 +9,9 @@
         :root {
             --bg: #121212; 
             --card-bg: #1a1a1a;
-            --text: #ffffff; /* Pure white for maximum pop */
-            --accent: #ffffff; /* Changed from gray to white for labels */
-            --border: #444444; /* Slightly lighter border for visibility */
+            --text: #ffffff; 
+            --accent: #ffffff; 
+            --border: #444444; 
             --button-hover: #e0e0e0;
         }
 
@@ -54,11 +54,11 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text); /* Nav links now white */
+            color: var(--text);
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            opacity: 0.8; /* Slight fade that goes to full white on hover */
+            opacity: 0.8;
             transition: 0.3s;
         }
 
@@ -67,7 +67,7 @@
             border-bottom: 1px solid var(--text);
         }
 
-        /* LIGHTBOX/ZOOM FEATURE */
+        /* LIGHTBOX */
         .clickable-img {
             cursor: pointer;
             transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), filter 0.3s ease;
@@ -137,7 +137,6 @@
             object-fit: cover;
         }
 
-        /* EMAIL DISPLAY */
         .email-display { margin-top: 2rem; }
         .email-display h2 {
             font-family: 'Playfair Display', serif;
@@ -153,7 +152,6 @@
             transition: 0.4s;
         }
 
-        /* FORM STYLING */
         .contact-form h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
@@ -166,10 +164,10 @@
         label {
             display: block;
             text-transform: uppercase;
-            font-size: 0.7rem; /* Small font */
+            font-size: 0.7rem;
             letter-spacing: 2px;
             margin-bottom: 0.8rem;
-            color: #ffffff; /* Now pure white */
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -186,7 +184,7 @@
         }
 
         input::placeholder, textarea::placeholder {
-            color: #888; /* Keeps placeholder subtle until user types */
+            color: #888;
         }
 
         input:focus, textarea:focus {
@@ -216,7 +214,6 @@
             letter-spacing: 4px;
         }
 
-        /* MOBILE VIEW */
         @media (max-width: 900px) {
             .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
             .photo-box { height: 400px; }
@@ -246,7 +243,7 @@
             
             <div class="contact-visual">
                 <div class="photo-box">
-                    <img class="clickable-img" src="../IMG_1814.JPG" alt="Portrait" onclick="openLightbox(this.src)" />          
+                    <img class="clickable-img" src="images/IMG_1814.jpg" alt="Portrait" onclick="openLightbox(this.src)" />          
                 </div>
                 
                 <div class="email-display">
